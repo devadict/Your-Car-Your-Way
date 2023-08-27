@@ -1,7 +1,12 @@
+CREATE DATABASE IF NOT EXISTS ycyw;
+
+USE ycyw;
+
+
 CREATE TABLE `user` (
   `id` integer PRIMARY KEY NOT NULL,
   `adresse_id` integer COMMENT '1',
-  `nom` varchar(50) NOT NULL COMMENT 'Franklin',
+  `nom` varchar(100) NOT NULL COMMENT 'Franklin',
   `prenom` varchar(50) COMMENT 'Roosevelt',
   `email` varchar(50) COMMENT 'franroo@gmail.com',
   `role` varchar(10) COMMENT 'admin, client, support',
@@ -19,19 +24,19 @@ CREATE TABLE `agence` (
 CREATE TABLE `carburant` (
   `carburant_id` integer PRIMARY KEY NOT NULL,
   `note_ecologique` integer COMMENT '4/5',
-  `nom` varchar(50) COMMENT 'Sans plomb 98',
+  `nom` varchar(100) COMMENT 'Sans plomb 98',
   `details` varchar(255) COMMENT 'Le sans plomb 98 est un carburant...'
 );
 
 CREATE TABLE `type` (
   `type_id` integer PRIMARY KEY NOT NULL,
-  `nom` varchar(50) COMMENT '4 fois 4, Berline, Espace',
+  `nom` varchar(100) COMMENT '4 fois 4, Berline, Espace',
   `description` varchar(255) COMMENT 'Le 4 fois 4 est idéal pour vos balades à la montagne etc...'
 );
 
 CREATE TABLE `fonctionnalite` (
   `fonctionnalite_id` integer PRIMARY KEY NOT NULL,
-  `nom` varchar(50) COMMENT 'Climatisation, Toit ouvrant, Conduite autonome, Semi Autonome',
+  `nom` varchar(100) COMMENT 'Climatisation, Toit ouvrant, Conduite autonome, Semi Autonome',
   `description` varchar(255) COMMENT 'Le toit ouvrant vous permettra de profiter pleinement de la vue'
 );
 
@@ -43,7 +48,7 @@ CREATE TABLE `vehicule` (
   `marque_id` integer COMMENT '1',
   -- `fonctionnalite_id` integer COMMENT '1',
   `passagers` integer COMMENT '5',
-  `modele` varchar(50) COMMENT 'Land Cruiser',
+  `modele` varchar(100) COMMENT 'Land Cruiser',
   `description` varchar(255) COMMENT 'Parfaite pour des terrains hostiles',
   `tarif_journalier` decimal COMMENT '200',
   FOREIGN KEY (`carburant_id`) REFERENCES `carburant`(`carburant_id`),
@@ -72,8 +77,8 @@ CREATE TABLE `adresse` (
   `adresse_id` integer NOT NULL,
   `numero` integer,
   `rue` varchar(255),
-  `code_postal` varchar(10),
-  `ville` varchar(50),
+  `code_postal` varchar(100),
+  `ville` varchar(100),
   `pays` varchar(255)
 );
 
@@ -85,7 +90,7 @@ CREATE TABLE `location` (
   `created_at` timestamp,
   `date_debut` datetime,
   `date_fin` datetime,
-  `moyen_paiement` varchar(50),
+  `moyen_paiement` varchar(100),
   `tarif_journalier` decimal,
   `carburant_fin` varchar(255) COMMENT 'Plein, Demi plein, Electirque',
   `montant_total` decimal,
