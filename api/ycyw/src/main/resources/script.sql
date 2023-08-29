@@ -23,7 +23,7 @@ CREATE TABLE `agence` (
 
 CREATE TABLE `carburant` (
   `carburant_id` integer PRIMARY KEY NOT NULL,
-  `note_ecologique` integer COMMENT '4/5',
+  `note_ecologique` integer COMMENT '4',
   `nom` varchar(100) COMMENT 'Sans plomb 98',
   `details` varchar(255) COMMENT 'Le sans plomb 98 est un carburant...'
 );
@@ -42,11 +42,9 @@ CREATE TABLE `fonctionnalite` (
 
 CREATE TABLE `vehicule` (
   `vehicule_id` integer PRIMARY KEY NOT NULL,
-  -- `agence_id` integer COMMENT '1',
   `carburant_id` integer COMMENT '1',
   `type_id` integer COMMENT '1',
   `marque_id` integer COMMENT '1',
-  -- `fonctionnalite_id` integer COMMENT '1',
   `passagers` integer COMMENT '5',
   `modele` varchar(100) COMMENT 'Land Cruiser',
   `description` varchar(255) COMMENT 'Parfaite pour des terrains hostiles',
